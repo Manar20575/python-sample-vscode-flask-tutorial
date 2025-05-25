@@ -1,7 +1,4 @@
-node{
-    agent{
-        label "java"
-    }
+node('Java'){
     stage('build Docker image'){
         sh "docker build -t manar564/data-it:v${BUILD_NUMBER} ."
     }
