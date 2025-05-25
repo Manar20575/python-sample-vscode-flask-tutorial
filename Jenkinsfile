@@ -1,4 +1,4 @@
-node('Java'){
+node('java'){
     stage('build Docker image'){
         sh "docker build -t manar564/data-it:v${BUILD_NUMBER} ."
     }
