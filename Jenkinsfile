@@ -1,20 +1,14 @@
-pipeline{
+node{
     agent{
         label "java"
     }
-    environment{
-        T='DE_ZAG'
+    stage('build Docker image'){
+        sh "docker build -t manar564/data-it:v${BUILD_NUMBER} ."
     }
-    stages{
-        stage("build Docker image"){
-            steps{
-                sh "docker build -t manar564/data-it:v${BUILD_NUMBER} ."
-            }
-        }
-        stage("Push Docker image"){
+    stage("Push Docker image"){
             steps{
                 sh "docker push manar564/data-it:v${BUILD_NUMBER}"
             }
         }
-    }
+
 }
