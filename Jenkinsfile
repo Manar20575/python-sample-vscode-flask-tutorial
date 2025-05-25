@@ -3,17 +3,17 @@ pipeline{
         label "java"
     }
     environment{
-        XYZ='ITI ITI ITI'
+        T='DE_ZAG'
     }
     stages{
         stage("build Docker image"){
             steps{
-                sh "docker build -t itiv4/data-iti:v${BUILD_NUMBER} ."
+                sh "docker build -t manar564/data-it:v${BUILD_NUMBER} ."
             }
         }
         stage("Push Docker image"){
             steps{
-                sh "docker push itiv4/data-iti:v${BUILD_NUMBER}"
+                sh "docker push manar564/data-it:v${BUILD_NUMBER}"
             }
         }
     }
