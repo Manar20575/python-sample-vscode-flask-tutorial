@@ -1,4 +1,5 @@
 node('java'){
+    checkout scm
     stage('build Docker image'){
         sh "pwd && ls"
         sh "docker build -t manar564/data-it:v${BUILD_NUMBER} ."
