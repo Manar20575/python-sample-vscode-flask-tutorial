@@ -1,3 +1,5 @@
+@Library('libT1')_
+
 pipeline{
     agent{
         label "java"
