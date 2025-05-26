@@ -15,13 +15,17 @@ pipeline{
     stages{
         stage("build Docker image"){
             steps{
+                script{
                 dockerT1.build('python', "${VERSION}")
+                }
             }
         }
         stage("Push Docker image"){
             steps{
+                script{
                     dockerT1.login("${DOCKER_USER}", "${DOCKER_PASS}")
                     dockerT1.push("${DOCKER_USER}", "${DOCKER_PASS}")
+                }            
             }
         }
     }
