@@ -7,7 +7,7 @@ pipeline{
     }
     environment{
         DOCKER_USER = credentials('dockerhub-user')
-        DOCKER_PASS = credentials('dockerhub-password')
+        DOCKER_PASS = credentials('docker-pass')
     }
         parameters {
         string defaultValue: '${BUILD_NUMBER}', description: 'Current Image Version', name: 'VERSION'
