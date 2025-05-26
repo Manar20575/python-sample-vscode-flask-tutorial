@@ -23,8 +23,8 @@ pipeline{
         stage("Push Docker image"){
             steps{
                 script{
-                    dockerT1.login("python", "${DOCKER_PASS}")
-                    dockerT1.push("${DOCKER_USER}", "${DOCKER_PASS}")
+                    dockerT1.login("${DOCKER_USER}", "${DOCKER_PASS}")
+                    dockerT1.push("python", "${VERSION}")
                 }            
             }
         }
