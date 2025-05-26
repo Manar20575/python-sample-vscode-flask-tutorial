@@ -1,4 +1,5 @@
 @Library('libT1')_
+def dockerT1 = new org.iti.docker()
 
 pipeline{
     agent{
@@ -7,7 +8,6 @@ pipeline{
     environment{
         DOCKER_USER = credentials('dockerhub-user')
         DOCKER_PASS = credentials('dockerhub-password')
-        def dockerT1 = new org.iti.docker()
     }
         parameters {
         string defaultValue: '${BUILD_NUMBER}', description: 'Current Image Version', name: 'VERSION'
