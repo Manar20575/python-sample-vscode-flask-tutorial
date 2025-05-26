@@ -16,7 +16,7 @@ pipeline{
         stage("build Docker image"){
             steps{
                 script{
-                dockerT1.build(""${DOCKER_USER}"/python", "${VERSION}")
+                dockerT1.build("${DOCKER_USER}/python", "${VERSION}")
                 }
             }
         }
